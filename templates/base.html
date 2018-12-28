@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,14 +7,20 @@
     <title>Sample Django</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static "css/custom.css" %}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="main.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="{% static "js/custom.js" %}"></script>
 </head>
 <body>
     {% include 'navbar.html' %}
+    
     <div class="container">
         {% block content %}
         {% endblock %}
     </div>
+
+    {% include 'footer.html' %}
 </body>
 </html>
